@@ -22,7 +22,6 @@ const optionsApi = {
     //headers: {
     //  authorization: "30d141e7-4c15-4471-802b-f050ee898489",
     //},
-    
 };
 
 export {

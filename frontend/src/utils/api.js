@@ -5,12 +5,13 @@ import {
 class Api {
     constructor(options) {
         this._baseUrl = options.baseUrl;
-        if(options.baseUrl){
-            this._headers = options.headers;
-        }else{
-            this._headers = {};
-        }
         this._checkResponse = this._checkResponse.bind(this);
+    }
+
+    get _headers() {
+        return {
+            authorization: `Bearer ${localStorage.getItem("jwt")}`
+        }
     }
 
     _checkResponse(res) {

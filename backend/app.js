@@ -1,5 +1,5 @@
 require('dotenv').config();
-
+const { requestLogger, errorLogger } = require('./middlewares/logger');
 const express = require('express');
 const helmet = require('helmet');
 const mongoose = require('mongoose');
@@ -42,6 +42,8 @@ app.use(
 
 app.use(cookieParser());
 
+app.use(requestLogger);
+
 app.post('/signup', validateSignUp, createUser);
 app.post('/signin', validateSignIn, login);
 
@@ -53,7 +55,7 @@ app.use('/cards', cards);
 app.use('*', (req, res, next) => {
   next(new NotFoundError('Запрашиваемый ресурс не найден.'));
 });
-
+app.use(errorLogger);
 app.use(errors());
 app.use(errorHandler);
 app.listen(PORT, () => {

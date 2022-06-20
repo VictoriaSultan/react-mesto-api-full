@@ -18,10 +18,10 @@ const validationSettings = {
 };
 
 const optionsApi = {
-    baseUrl: "https://mesto.nomoreparties.co/v1/cohort-37",
-    headers: {
-        authorization: "30d141e7-4c15-4471-802b-f050ee898489",
-    },
+    baseUrl: "https://victoria-mesto.nomoreparties.sbs",
+    //headers: {
+    //  authorization: "30d141e7-4c15-4471-802b-f050ee898489",
+    //},
 };
 
 export {

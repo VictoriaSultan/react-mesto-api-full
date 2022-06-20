@@ -1,4 +1,4 @@
-const BASE_URL = "https://auth.nomoreparties.co";
+const BASE_URL = "https://victoria-mesto.nomoreparties.sbs";
 
 const _checkResponse = (res) => {
   if (res.ok) {

@@ -1,0 +1,10 @@
+.element__image {
+    padding: 0;
+    width: 282px;
+    height: 282px;
+    background-color: transparent;
+    background-position: center;
+    background-size: cover;
+    border: none;
+    border-radius: 10px 10px 0 0;
+}

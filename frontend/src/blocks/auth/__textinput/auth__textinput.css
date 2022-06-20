@@ -1,0 +1,21 @@
+.auth__textinput {
+    width: 358px;
+    height: 27px;
+    border: none;
+    border-bottom: 2px solid #cccccc;
+    background-color: #000000;
+    color: #cccccc;
+    font-family: Inter, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    margin-top: 30px;
+    padding-bottom: 13px;
+}
+
+@media screen and (max-width: 767px) {
+    .auth__textinput {
+        width: 260px;
+    }
+}

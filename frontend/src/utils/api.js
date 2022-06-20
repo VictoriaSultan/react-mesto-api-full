@@ -5,7 +5,11 @@ import {
 class Api {
     constructor(options) {
         this._baseUrl = options.baseUrl;
-        this._headers = options.headers;
+        if(options.baseUrl){
+            this._headers = options.headers;
+        }else{
+            this._headers = {};
+        }
         this._checkResponse = this._checkResponse.bind(this);
     }
 

@@ -3,5 +3,7 @@
   
 Пожалуйста, прикрепите в это описание ссылку на сайт, размещенный на Яндекс.Облаке.
 
-- frontend - http://victoria-mesto-front.nomoreparties.sbs
-- backend - http://victoria-mesto.nomoreparties.sbs
+- frontend - https://mesto.gramr.ru
+- backend - https://api.mesto.gramr.ru
+
+Server on IP: `51.250.2.244`

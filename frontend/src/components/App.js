@@ -61,7 +61,7 @@ const App = () => {
         if (jwt) {
             auth.checkToken(jwt).then((res) => {
                 setIsLoggedIn(true);
-                setEmail(res.data.email);
+                setEmail(res.email);
                 history.push("/");
             })
             .catch((err) => {

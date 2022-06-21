@@ -18,11 +18,7 @@ const validationSettings = {
 };
 
 const optionsApi = {
-    baseUrl: "https://victoria-mesto.nomoreparties.sbs",
-    //headers: {
-    //  authorization: "30d141e7-4c15-4471-802b-f050ee898489",
-    //},
-    
+    baseUrl: "https://api.mesto.gramr.ru",
 };
 
 export {

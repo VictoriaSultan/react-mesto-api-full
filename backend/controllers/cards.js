@@ -33,13 +33,14 @@ module.exports.createCard = (req, res, next) => {
 module.exports.deleteCard = (req, res, next) => {
   const { cardId } = req.params;
 
+  /* eslint-disable */
   Card.findById(cardId)
     .orFail(new Error('Error'))
     .then((card) => {
       if (req.user._id !== card.owner.toString()) {
-        next(new ForbiddenError('Чужую карточку нельзя удалить.'));
+        return next(new ForbiddenError('Чужую карточку нельзя удалить.'));
       } else {
-        return Card.deleteOne(card).then(() => { res.status(200).send({ message: `Карточка с id ${card.id} успешно удалена!` }); });
+        return Card.deleteOne(card).then(() => { res.send({ message: `Карточка с id ${card.id} успешно удалена!` }); });
       }
     })
     .catch((err) => {
@@ -51,6 +52,7 @@ module.exports.deleteCard = (req, res, next) => {
         next(err);
       }
     });
+    /* eslint-enable */
 };
 
 module.exports.likeCard = (req, res, next) => {

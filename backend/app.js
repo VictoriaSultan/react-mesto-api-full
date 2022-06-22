@@ -1,11 +1,11 @@
 require('dotenv').config();
 const cors = require('cors');
-const { requestLogger, errorLogger } = require('./middlewares/logger');
 const express = require('express');
 const helmet = require('helmet');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const { errors } = require('celebrate');
+const { requestLogger, errorLogger } = require('./middlewares/logger');
 const cards = require('./routes/cards');
 const users = require('./routes/users');
 const auth = require('./middlewares/auth');
@@ -23,13 +23,8 @@ const options = {
   // useFindAndModify: false,
 };
 
-mongoose.connect(MONGODB, options).catch((error) => {
-  console.error(error);
+mongoose.connect(MONGODB, options).catch(() => {
   process.exit(1);
-});
-
-mongoose.connection.on('error', (error) => {
-  console.error(error);
 });
 
 const app = express();
@@ -66,6 +61,4 @@ app.use('*', (req, res, next) => {
 app.use(errorLogger);
 app.use(errors());
 app.use(errorHandler);
-app.listen(PORT, () => {
-  console.log(`App listening on port ${PORT}`);
-});
+app.listen(PORT, () => {});

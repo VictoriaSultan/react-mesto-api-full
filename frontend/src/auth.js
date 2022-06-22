@@ -1,4 +1,4 @@
-const BASE_URL = "https://victoria-mesto.nomoreparties.sbs";
+const BASE_URL = "https://api.mesto.gramr.ru";
 
 const _checkResponse = (res) => {
   if (res.ok) {
@@ -37,7 +37,7 @@ const checkToken = (token) => {
         headers: {
             "Accept": "application/json",
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${token}`,
+            authorization: `Bearer ${token}`,
         }
     })
     .then(_checkResponse);
